@@ -7,7 +7,7 @@ class BookSerializer(serializers.ModelSerializer):
         fields = ['author', 'name', 'date_created']
 
 class AuthorSerializer(serializers.ModelSerializer):
-    
+    book_set = BookSerializer(many=True)
     class Meta:
         model = Author
         fields = ['username', 'password']
